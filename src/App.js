@@ -1,8 +1,11 @@
+import { Header } from "./components/Header";
+import { Container } from "./styles/UI";
+
 function App() {
   return (
-    <div>
-      
-    </div>
+    <Container>
+      <Header />
+    </Container>
   );
 }
 
