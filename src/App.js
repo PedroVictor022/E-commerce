@@ -4,15 +4,18 @@ import { Header } from "./components/Header";
 import { Container } from "./styles/UI";
 
 function App() {
-  const [newNote, setNewNote] = useState({})
-  const [notes, setNotes] = useState([])
+  const [ notes, setNotes ] = useState([])
 
+  const sendData = (data) => {
+    setNotes(data);
+    console.log(notes)
+  }
 
   return (
     <Container>
       <Header />
 
-      <FormNote />
+      <FormNote sendData={sendData}/>
 
     </Container>
   );
