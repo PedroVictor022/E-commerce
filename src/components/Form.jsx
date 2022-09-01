@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export function FormNote(sendData) {
+export function FormNote(props) {
    const [title, setTitle] = useState("");
    const [body, setBody] = useState("");
    const [notes, setNotes] = useState([]);
@@ -9,7 +9,7 @@ export function FormNote(sendData) {
       e.preventDefault();
 
 
-      const generateID = Math.random(10).toFixed(3);
+      const generateID = Math.floor(Math.random() * 100);
 
       if (title.trim() && body.trim()) {
          const newNote = {
@@ -19,9 +19,23 @@ export function FormNote(sendData) {
          };
          setNotes([...notes, newNote]);
 
+         // props.onSubmit({
+         //    id: generateID,
+         //    title: title,
+         //    body: body
+         // });
+         // setNotes([...notes, newNote]);
+
+
       } else {
          console.log("Formulario invalido")
       }
+   }
+
+   const deleteNote = id => {
+      const updateList = [...notes];
+      updateList.slice(id, 1);
+      setNotes(updateList);
    }
 
    return (
@@ -53,7 +67,7 @@ export function FormNote(sendData) {
                   <div key={note.id}>
                      <h1>{note.title}</h1>
                      <p>{note.body}</p>
-                     <button>Delete</button>
+                     <button onClick={() => deleteNote(note.id)}>Delete</button>
                   </div>
                )
             })
