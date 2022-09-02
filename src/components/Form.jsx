@@ -34,7 +34,7 @@ export function FormNote({sendData}) {
    }
 
    const deleteNote = id => {
-      const updateList = [...notes];
+      const updateList = notes.filter(nota => nota.id !== id)
       updateList.slice(id, 1);
       setNotes(updateList);
    }
