@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export function FormNote(props) {
+export function FormNote({sendData}) {
    const [title, setTitle] = useState("");
    const [body, setBody] = useState("");
    const [notes, setNotes] = useState([]);
@@ -18,6 +18,7 @@ export function FormNote(props) {
             body: body
          };
          setNotes([...notes, newNote]);
+         sendData(notes)
 
          // props.onSubmit({
          //    id: generateID,
