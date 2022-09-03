@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ProductContainer = styled.div`
-   width: 50%;
+   width: 70%;
    display: flex;
    flex-wrap: wrap;
    gap: 1rem;
