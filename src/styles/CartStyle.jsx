@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ProductContainer = styled.div`
-   width: 70%;
+   width: 50%;
    display: flex;
    flex-wrap: wrap;
    gap: 1rem;
@@ -10,8 +10,7 @@ export const ProductContainer = styled.div`
 `
 
 export const ProductItem = styled.div`
-   width: 250px;
-   max-height: 130px;
+   width: 230px;
 
    display: flex;
    flex-direction: column;
@@ -19,7 +18,12 @@ export const ProductItem = styled.div`
 
    border-radius: 0.2rem;
 
-   background-color: #838383;
+   background-color: #fefefe;
    padding: 1rem;
+
+   img {
+      width: 200px;
+      height: 150px;
+   }
 
 `

@@ -1,10 +1,9 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-   width: 100vw;
+   width: auto;
    height: 100vh;
-
-   background-color: #bebebe;
+   background-color: #e0e0e0;
 `
 
 // Header Styles
@@ -12,8 +11,6 @@ export const HeaderContainer = styled.header`
    width: 100%;
    display: flex;
    flex-direction: column;
-
-   border-bottom:1px solid #fefefe;
 
    .top-container {
       flex:1;

@@ -10,7 +10,8 @@ export const Product = ({products, addToCart}) => {
                      key={item.id}
                   >
                      <h2>{item.name}</h2>
-                     <p>de R${item.price} - estoque {item.qtd}</p>
+                     <img src={item.img} alt="" />
+                     <p>de R${item.price}</p>
                      <button onClick={() => addToCart(item.id)}>Comprar</button>
                   </ProductItem>
                )
