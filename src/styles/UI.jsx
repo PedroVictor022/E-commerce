@@ -8,46 +8,61 @@ export const Container = styled.div`
 `
 
 // Header Styles
-export const HeaderC = styled.header`
-   display:flex;
-   align-items: center;
-   justify-content: space-around;
-
-   padding: 1rem;
-
-   color:#fff;
-   background-color: #1c1c1c;
-
-   border-bottom: 1px solid #2f2f2f;
-
-   h1 {
-      font-size: 36px;
-   }
-
-   .research-container {
-      display: flex;
-      gap:1rem;
-   }
-`
-export const NavItem = styled.div`
+export const HeaderContainer = styled.header`
+   width: 100%;
    display: flex;
-   gap:1rem;
+   flex-direction: column;
+
+   border-bottom:1px solid #fefefe;
+
+   .top-container {
+      flex:1;
+      display: flex;
+      align-items:center;
+      justify-content: space-around;
+   
+      background-color: #222;
+
+      padding: 1rem; 
+   }
+   .promo-container {
+      display: flex;
+      justify-content: center;
+      
+      color: #fff;
+      font-weight: 600;
+      padding: 0.2rem;
+
+      background-color: #02c067;
+   }
+
 `
-export const Button = styled.button`
-   padding: 0.5rem;
-   border-radius: 6px;
-   border:none;
-   cursor:pointer;
-
-   background-color: #7335e7;
-   color: #eee;
-
-   font-size: 1rem;
+export const SearchInput = styled.input`
+   border: none;
+   border-radius: 2px;
+   padding: 0.3rem;
+   text-align:center;
+   outline: none;
+`
+export const Title = styled.h1`
    font-weight: 600;
+   font-size: 36px;
+   color:#fefefe;
+`
+export const Navbar = styled.nav`
+   display: flex;
+   gap: 1rem;
+   align-items:center;
 
-   transition: all .2s;
-   &:hover {
-      transition: all .2s;
-      background-color: #915af8;
+   a {
+      font-size:20px;
+      text-decoration: none;
+      color: #fefefe;
+      padding: 0.2rem;
+      background-color: transparent;
+      border-radius:0.6rem;
+      &:hover {
+         background-color: red;
+      }
    }
 `
