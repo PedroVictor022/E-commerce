@@ -15,7 +15,7 @@ export const Home = () => {
       },
       {
          id:3,
-         name: 'Monitor Ultrawide 29',
+         name: 'Monitor Gamer',
          price: 600,
       },
       {
