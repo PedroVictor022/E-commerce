@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
    width: auto;
    height: 100vh;
-   background-color: #e0e0e0;
+   background-color: #ebebeb;
 `
 
 // Header Styles
@@ -18,7 +18,7 @@ export const HeaderContainer = styled.header`
       align-items:center;
       justify-content: space-around;
    
-      background-color: #222;
+      background-color: #5E2F98;
 
       padding: 1rem; 
    }
@@ -58,8 +58,5 @@ export const Navbar = styled.nav`
       padding: 0.2rem;
       background-color: transparent;
       border-radius:0.6rem;
-      &:hover {
-         background-color: red;
-      }
    }
 `

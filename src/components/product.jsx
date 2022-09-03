@@ -1,17 +1,19 @@
 import { ProductContainer, ProductItem } from "../styles/CartStyle"
 
-export const Product = ({products, addToCart}) => {
+export const Product = ({ products, addToCart }) => {
    return (
       <ProductContainer>
          {
             products.map((item) => {
                return (
-                  <ProductItem 
+                  <ProductItem
                      key={item.id}
                   >
-                     <h2>{item.name}</h2>
-                     <img src={item.img} alt="" />
-                     <p>de R${item.price}</p>
+                     <div className="flexStart">
+                        <img src={item.img} alt="" />
+                        <h2>{item.name}</h2>
+                        <p>de R${item.price}</p>
+                     </div>
                      <button onClick={() => addToCart(item.id)}>Comprar</button>
                   </ProductItem>
                )
