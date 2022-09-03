@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { Product } from "../components/product"
 
 export const Home = () => {
    const [products, setProducts] = useState([
@@ -6,57 +7,50 @@ export const Home = () => {
          id:1,
          name: 'Macbook M1',
          price: 10000,
-         qtd: 3,
       },
       {
          id:2,
          name: 'Razer Nagga',
          price: 1200,
-         qtd:5,
       },
       {
          id:3,
          name: 'Monitor Ultrawide 29',
          price: 600,
-         qtd: 2,
       },
       {
          id:4,
          name: 'Windows 11 PRO',
          price: 200,
-         qtd: 10,
       },
       {
          id:5,
          name: 'Keyboard K2',
          price: 90,
-         qtd: 3,
+      },
+      {
+         id:6,
+         name: 'Keyboard K3',
+         price: 122,
       },
    ])
 
+   const [ cart, setCart ] = useState([]);
+
+   const addToCart = id => {
+      const pSelected = products.find((item) => item.id === id)
+      setCart([...cart, pSelected])
+      console.log(cart);
+   }
 
    return (
       <div>
          Homepage
-
-         {/* Produtos em destaque */}
-
-         produtos
-         {
-            products.map((item) => {
-               return (
-                  <div>
-                     <h2>{item.name}</h2>
-                     <p>de R${item.price} - estoque {item.qtd}</p>
-                  </div>
-               )
-            })
-         }
-
-         mais conteudo
-
-
-
+         Produtos no carrinho - {cart.length}
+         <Product 
+            products={products}
+            addToCart={addToCart}
+         />
       </div>
    )
 }
