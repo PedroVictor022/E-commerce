@@ -1,9 +1,9 @@
-import { useContext } from "react"
-import { BrowserRouter, Routes, Route } from "react-router-dom"
-import CartProvider from "../context/CartContext"
-import { CartPage } from "../pages/Carrinho"
-import { Home } from "../pages/Home"
-import { Header } from "../styles/Header"
+import { useContext } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import CartProvider from "../context/CartContext";
+import { CartPage } from "../pages/Carrinho";
+import { Home } from "../pages/Home";
+import { Header } from "../components/Header";
 
 export const RoutesApp = () => {
 
