@@ -6,17 +6,20 @@ const ProductContainer = styled.div`
 
    width: 70%;
 
-   margin: 0rem auto;
+   margin: 2rem auto;
 
    gap: 1rem;
    @media (max-width:900px) {
       width: 60%;
-      background-color: red;
       grid-template-columns: 2fr 2fr;
+   }
+   @media (max-width:600px) {
+      grid-template-columns: 1fr;
    }
 `
 
 const ProductItem = styled.div`
+
    display: flex;
    flex-direction: column;
 
@@ -51,6 +54,12 @@ const ProductItem = styled.div`
          color: #272727;
          width: auto;
          height: 50px;
+      }
+
+      @media (max-width:700px) {
+         .desc {
+            margin-bottom: 10px;
+         }
       }
 
       .price {

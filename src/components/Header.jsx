@@ -84,10 +84,10 @@ export const Header = () => {
             <input
                placeholder="Macbook PRO"
             />
-            <h1>Dev Shop</h1>
+            <h1>Tech Shop</h1>
             <div className="navbar">
                <Link to="">Home</Link>
-               <Link to="/my-cart">Carrinho</Link>
+               <Link to="/my-cart">Carrinho - {cart.length}</Link>
                <Link to="*">Login</Link>
             </div>
          </TopContainer>

@@ -16,7 +16,7 @@ export const ProductsList = [
    {
       id: 2,
       name: 'Razer Naga',
-      desc: "Mouse gamer Naga com 12 teclas",
+      desc: "Mouse gamer Razer Naga",
       img: naga,
       price: 1200,
    },

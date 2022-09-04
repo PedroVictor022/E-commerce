@@ -18,8 +18,6 @@ export const Home = () => {
 
    return (
       <div>
-         Homepage
-         Produtos no carrinho - {cart.length}
          <Product 
             products={products}
             addToCart={addToCart}
