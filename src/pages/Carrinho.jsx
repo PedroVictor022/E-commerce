@@ -1,6 +1,5 @@
 import { useContext } from "react"
 import { CartContext } from "../context/CartContext"
-import { ProductItem } from "../styles/CartStyle"
 
 export const CartPage = () => {
    const { cart } = useContext(CartContext)
@@ -10,7 +9,7 @@ export const CartPage = () => {
          {
             cart.map(item => {
                return (
-                  <ProductItem
+                  <div
                      key={item.id}
                   >
                      <div className="flexStart">
@@ -19,7 +18,7 @@ export const CartPage = () => {
                         <p>de R${item.price}</p>
                      </div>
                      <button>Comprar</button>
-                  </ProductItem>
+                  </div>
                )
             })
          }
