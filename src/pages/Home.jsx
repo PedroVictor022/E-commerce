@@ -3,7 +3,6 @@ import { useState } from "react"
 import { Product } from "../components/product"
 import { CartContext } from "../context/CartContext";
 import { ProductsList } from "../data/data";
-import { Container } from "../styles/UI";
 
 export const Home = () => {
    const { cart, setCart} = useContext(CartContext);
@@ -18,13 +17,13 @@ export const Home = () => {
    }
 
    return (
-      <Container>
+      <div>
          Homepage
          Produtos no carrinho - {cart.length}
          <Product 
             products={products}
             addToCart={addToCart}
          />
-      </Container>
+      </div>
    )
 }
