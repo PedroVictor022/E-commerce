@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const ProductContainer = styled.div`
+export const ProductContainer = styled.div`
    display: grid;
    grid-template-columns: 2fr 2fr 2fr;
 
@@ -18,7 +18,7 @@ const ProductContainer = styled.div`
    }
 `
 
-const ProductItem = styled.div`
+export const ProductItem = styled.div`
 
    display: flex;
    flex-direction: column;
