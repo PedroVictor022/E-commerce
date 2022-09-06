@@ -39,6 +39,26 @@ export const ProductItem = styled.div`
       padding: 0.5rem;
    
       margin-bottom: 1rem;
+      .btn-delete {
+         display: flex;
+         align-items: flex-end;
+         justify-content: flex-end;
+         width: 100%;
+         button {
+            border: none;
+            border-radius: 6px;
+            padding: 0.2rem 0.5rem;
+            background-color: #e01732;
+            cursor: pointer;
+            font-size: 20px;
+            color: #eee;
+            font-weight: 800;
+            transition: .2s;
+            &:hover {
+               background-color: #d40202;
+            }
+         }
+      }
       img {
          border-bottom:1px solid #22222234;
          width: 120px;
@@ -89,9 +109,9 @@ export const Product = ({ products, addToCart }) => {
    return (
       <ProductContainer>
          {
-            products.map((item) => {
+            products.map((item, id) => {
                return (
-                  <ProductItem key={item.id}>
+                  <ProductItem key={id}>
                         <div className="flexStart">
                           <img src={item.img} alt="" />
                            <h2 className="name">{item.name}</h2>

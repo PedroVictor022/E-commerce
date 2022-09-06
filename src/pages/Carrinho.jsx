@@ -20,26 +20,38 @@ const TotalPriceComponent = ({ children }) => {
 }
 
 export const CartPage = () => {
-   const { cart } = useContext(CartContext);
+   const { cart, setCart } = useContext(CartContext);
+
+   // ! BUG, nao vai conseguir remover items do carrinho pois o id deles sao iguais, remover um vai remover todos, pensar em uma forma de quando adicionar o produto ao carrinho, ele ter um id proprio
+
+   console.log(cart)
 
    const totalPrice = () => {
-      const price = cart.map(item => item.price);
-      const sumTotal = price.reduce((item, i) => {
-         return item += i;
-      })
-      return (
-         <TotalPriceComponent>
-            <p> Valor total no carrinho {sumTotal}</p>
-         </TotalPriceComponent>
-      )
+      if (cart.length > 0) {
+         const price = cart.map(item => item.price);
+         const sumTotal = price.reduce((item, i) => {
+            return item += i;
+         })
+         return (
+            <TotalPriceComponent>
+               <p> Valor total no carrinho {sumTotal}</p>
+            </TotalPriceComponent>
+         )
+      } else {
+         return (
+            <TotalPriceComponent>
+               <p>Carrinho de compras esta vazio</p>
+            </TotalPriceComponent>
+         )
+      }
+   };
+
+   const removeProduct = (id) => {
+      const rmItem = cart.filter((item) => item.id !== id);
+      setCart(rmItem);
    }
 
 
-   if (cart.length > 0) {
-      totalPrice();
-   } else {
-      return console.log('Carrinho vazio');
-   }
 
 
 
@@ -61,6 +73,10 @@ export const CartPage = () => {
                         key={id}
                      >
                         <div className="flexStart">
+                           <div className="btn-delete">
+                              {/* Adicionar um botao para excluir o produto do carrinho */}
+                              <button onClick={() => removeProduct(item.id)}>X</button>
+                           </div>
                            <img src={item.img} alt="" />
                            <h2>{item.name}</h2>
                            <p>de R${item.price}</p>

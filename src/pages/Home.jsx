@@ -8,12 +8,9 @@ export const Home = () => {
    const { cart, setCart} = useContext(CartContext);
    const [products, setProducts] = useState(ProductsList);
 
-   // const [ cart, setCart ] = useState([]);
-
    const addToCart = id => {
       const pSelected = products.find((item) => item.id === id)
       setCart([...cart, pSelected])
-      console.log(cart);
    }
 
    return (
