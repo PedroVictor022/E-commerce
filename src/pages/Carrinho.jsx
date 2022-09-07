@@ -22,9 +22,7 @@ const TotalPriceComponent = ({ children }) => {
 export const CartPage = () => {
    const { cart, setCart } = useContext(CartContext);
 
-   // ! BUG, nao vai conseguir remover items do carrinho pois o id deles sao iguais, remover um vai remover todos, pensar em uma forma de quando adicionar o produto ao carrinho, ele ter um id proprio
-
-   console.log(cart)
+   console.table(cart)
 
    const totalPrice = () => {
       if (cart.length > 0) {
@@ -34,13 +32,13 @@ export const CartPage = () => {
          })
          return (
             <TotalPriceComponent>
-               <p> Valor total no carrinho {sumTotal}</p>
+               <p> Valor total do carrinho R${sumTotal},00</p>
             </TotalPriceComponent>
          )
       } else {
          return (
             <TotalPriceComponent>
-               <p>Carrinho de compras esta vazio</p>
+               <p>Carrinho de compras vazio.</p>
             </TotalPriceComponent>
          )
       }
@@ -50,7 +48,6 @@ export const CartPage = () => {
       const rmItem = cart.filter((item) => item.id !== id);
       setCart(rmItem);
    }
-
 
 
 
