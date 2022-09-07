@@ -1,6 +1,7 @@
 import { useContext } from "react"
 import { Link } from "react-router-dom"
 import { CartContext } from "../context/CartContext"
+import { RiShoppingCart2Fill, RiHome2Fill, RiUser2Fill } from "react-icons/ri"
 
 import styled from "styled-components";
 
@@ -23,7 +24,8 @@ const HeaderS = styled.header`
 const TopContainer = styled.div`
    display: flex;
    align-items: center;
-   justify-content:space-around;
+   justify-content: center;
+   gap: 5rem;
    padding-top: 1rem;
    padding-bottom: 1rem;
    width: 100%;
@@ -86,9 +88,9 @@ export const Header = () => {
             />
             <h1>Tech Shop</h1>
             <div className="navbar">
-               <Link to="">Home</Link>
-               <Link to="/my-cart">Carrinho - {cart.length}</Link>
-               <Link to="*">Login</Link>
+               <Link to=""><RiHome2Fill/></Link>
+               <Link to="/my-cart"><RiShoppingCart2Fill/>{cart.length}</Link>
+               <Link to="*"><RiUser2Fill/></Link>
             </div>
          </TopContainer>
          <div className="promo-container">
