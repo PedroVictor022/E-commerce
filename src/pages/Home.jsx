@@ -5,11 +5,16 @@ import { CartContext } from "../context/CartContext";
 import { ProductsList } from "../data/data";
 
 export const Home = () => {
-   const { cart, setCart} = useContext(CartContext);
+   const { cart, setCart, product } = useContext(CartContext);
    const [products, setProducts] = useState(ProductsList);
 
    const addToCart = id => {
-      const pSelected = products.find((item) => item.id === id)
+      let pSelected = products.find((item) => item.id === id)
+      products.push({
+         ...pSelected,
+         uniqueID: Math.random(Math.random() * 10)
+      })
+      console.table(products, pSelected)
       setCart([...cart, pSelected])
    }
 
