@@ -17,7 +17,7 @@ const HeaderS = styled.header`
       background-color: #25c76e;
       width: 100%;
       text-align: center;
-      padding: 0.2rem;
+      padding: 1rem;
       font-weight: 800;
    }
 `
@@ -94,7 +94,7 @@ export const Header = () => {
             </div>
          </TopContainer>
          <div className="promo-container">
-            <p>Todos os produtos com 10% de desconto, APROVEITE!</p>
+            <p>Todos os produtos com 10% de desconto!</p>
          </div>
       </HeaderS>
    )
