@@ -4,6 +4,7 @@ import { useN, useNavigate, useNavigateavigate } from "react-router-dom"
 
 import styled from "styled-components";
 import { ProductContainer, ProductItem } from "../components/product";
+import { Modal } from "../components/Modal";
 
 const CartContainer = styled.div`
   display: flex;
@@ -40,16 +41,7 @@ const TotalPriceComponent = ({ children }) => {
   return <AlignCenter>{children}</AlignCenter>;
 };
 
-const Modal = () => {
-  return (
-    <div>
-      <form>
 
-      </form>
-      <button>Finalizar compra</button>
-    </div>
-  )
-}
 
 export const CartPage = () => {
   const [ isVisible, setIsVisible ] = useState(false);
@@ -77,7 +69,7 @@ export const CartPage = () => {
             <p> Valor total do carrinho R${sumTotal},00</p>
             <button 
               onClick={completeBuy}
-            >Finalizar Compra</button>
+            >Comprar</button>
           </div>
 
           {
