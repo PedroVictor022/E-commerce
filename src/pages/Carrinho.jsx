@@ -13,7 +13,7 @@ const CartContainer = styled.div`
   margin-top: 1rem;
 `;
 
-const AlignCenter = styled.div`
+const AlignCenter = styled.div` 
   .alignCenter {
     display: flex;
     flex-direction: column;
@@ -44,19 +44,16 @@ const TotalPriceComponent = ({ children }) => {
 
 
 export const CartPage = () => {
-  const [ isVisible, setIsVisible ] = useState(false);
+  
   const { cart, setCart } = useContext(CartContext);
   let menuPrincipal = useNavigate();
 
-  const totalPrice = () => {
+  const completeBuy = () => {
+    alert("Compra finalizada com sucesso!");
+    setCart([]);
+  }
 
-    const completeBuy = () => {
-      alert("Compra finalizada com sucesso!");
-      setIsVisible(!isVisible)
-      console.log(isVisible);
-      // menuPrincipal("/");
-      // setCart([])
-    }
+  const totalPrice = () => {
 
     if (cart.length > 0) {
       const price = cart.map((item) => item.price);
@@ -71,11 +68,6 @@ export const CartPage = () => {
               onClick={completeBuy}
             >Comprar</button>
           </div>
-
-          {
-            isVisible ? <Modal /> : null
-          }
-
         </TotalPriceComponent>
       );
     } else {

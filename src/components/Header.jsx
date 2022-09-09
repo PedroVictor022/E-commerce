@@ -90,7 +90,7 @@ export const Header = () => {
             <div className="navbar">
                <Link to=""><RiHome2Fill/></Link>
                <Link to="/my-cart"><RiShoppingCart2Fill/>{cart.length}</Link>
-               <Link to="*"><RiUser2Fill/></Link>
+               <Link to=""><RiUser2Fill/></Link>
             </div>
          </TopContainer>
          <div className="promo-container">
